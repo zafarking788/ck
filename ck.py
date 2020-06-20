@@ -33,7 +33,7 @@ def random_numbers():
   print('''
   [ FACEBOOK CRACKER RANDOM NUMBERS ]
 
- Fill in the initial number, sis
+ Fill in the initial number, bro
   Must be 5 digits or may not be less and may not be more.
   Example: 62877
   ''')
