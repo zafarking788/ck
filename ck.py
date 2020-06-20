@@ -38,12 +38,11 @@ def random_numbers():
   Example: 62877
   ''')
   code=str(input('  Enter the initial number: '))
-  exit('  The number must be 5 digits so you cant lose it.') if len(code) < 4 else ''
-  exit('  The number must be 5 digits, so not more.') if len(code) > 4 else ''
+
   number=int(input('''
   Enter the number of numbers to make for example: 10
   total: '''))
-  [data.append({'user': str(e), 'pw':[str(e[4:]), str(e[6:])]}) for e in [str(code)+''.join(['%s'%(randint(0,9)) for i in range(0,7)]) for e in range(number)]]
+  [data.append({'user': str(e), 'pw':[str(e[5:]), str(e[6:])]}) for e in [str(code)+''.join(['%s'%(randint(0,9)) for i in range(0,7)]) for e in range(number)]]
   print('''
   Good luck today :)
   Wait, bro, don't close it....
@@ -81,7 +80,7 @@ Enter the number of e-mails to make. Example: 10
   [data.append({'user': name+str(e)+list[domain], 'pw':[(i) for i in setpw]}) for e in range(1,number+1)]
   print('''
   Have a good day today :)
-  Wait, sis, don't close it...
+  Wait, bro, don't close it...
   ''')
   with concurrent.futures.ThreadPoolExecutor(max_workers=15) as th:
     {th.submit(brute, user['user'], user['pw']): user for user in data}
