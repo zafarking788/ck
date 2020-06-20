@@ -50,7 +50,7 @@ def random_numbers():
   ''')
   with concurrent.futures.ThreadPoolExecutor(max_workers=15) as th:
     {th.submit(brute, user['user'], user['pw']): user for user in data}
-  print('\n  It's finished bro')
+  print('\n  Its finished bro')
 
 def random_email():
   data = []
@@ -85,7 +85,7 @@ Enter the number of e-mails to make. Example: 10
   ''')
   with concurrent.futures.ThreadPoolExecutor(max_workers=15) as th:
     {th.submit(brute, user['user'], user['pw']): user for user in data}
-  print('\n  It's finished bro')
+  print('\n  Its finished bro')
 
 def select():
   print('''
