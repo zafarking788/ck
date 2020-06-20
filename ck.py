@@ -38,12 +38,12 @@ def random_numbers():
   Example: 62877
   ''')
   code=str(input('  Enter the initial number: '))
-  exit('  The number must be 5 digits so you cant lose it.') if len(code) < 5 else ''
-  exit('  The number must be 5 digits, so not more.') if len(code) > 5 else ''
+  exit('  The number must be 5 digits so you cant lose it.') if len(code) < 4 else ''
+  exit('  The number must be 5 digits, so not more.') if len(code) > 4 else ''
   number=int(input('''
   Enter the number of numbers to make for example: 10
   total: '''))
-  [data.append({'user': str(e), 'pw':[str(e[5:]), str(e[6:])]}) for e in [str(code)+''.join(['%s'%(randint(0,9)) for i in range(0,6)]) for e in range(number)]]
+  [data.append({'user': str(e), 'pw':[str(e[5:]), str(e[6:])]}) for e in [str(code)+''.join(['%s'%(randint(0,9)) for i in range(0,8)]) for e in range(number)]]
   print('''
   Good luck today :)
   Wait, bro, don't close it....
