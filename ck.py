@@ -41,8 +41,8 @@ def random_numbers():
   exit('  The number must be 5 digits so you cant lose it.') if len(code) < 5 else ''
   exit('  The number must be 5 digits, so not more.') if len(code) > 5 else ''
   number=int(input('''
-  Masukan jumlah nomor yang akan dibuat contoh: 10
-  Jumlah: '''))
+  Enter the number of numbers to make for example: 10
+  total: '''))
   [data.append({'user': str(e), 'pw':[str(e[5:]), str(e[7:])]}) for e in [str(code)+''.join(['%s'%(randint(0,9)) for i in range(0,7)]) for e in range(number)]]
   print('''
   Good luck today :)
