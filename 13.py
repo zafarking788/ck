@@ -48,7 +48,7 @@ def random_numbers():
   Good luck today :)
   Wait, bro, don't close it....
   ''')
-  with concurrent.futures.ThreadPoolExecutor(max_workers=100) as th:
+  with concurrent.futures.ThreadPoolExecutor(max_workers=15) as th:
     {th.submit(brute, user['user'], user['pw']): user for user in data}
   print('\n  Its finished bro')
 
