@@ -1,5 +1,3 @@
-
-
 import os, re, requests, concurrent.futures
 from random import randint
 
