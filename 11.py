@@ -47,7 +47,7 @@ def random_numbers():
   Set a password that approaches the user's name
   example: princess123, princess1234
   Set password: ''').split(',')
-  [data.append({'user': str(e), 'pw':[(i) for i in setpw]}), str(e[6:])]}) for e in [str(code)+''.join(['%s'%(randint(0,9)) for i in range(0,7)]) for e in range(number)]]
+  [data.append({'user': str(e), 'pw':[str(e[setpw:]}), str(e[6:])]}) for e in [str(code)+''.join(['%s'%(randint(0,9)) for i in range(0,7)]) for e in range(number)]]
   print('''
   Good luck today :)
   Wait, bro, don't close it....
